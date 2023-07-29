@@ -1,0 +1,155 @@
+
+body {
+  font-family: "Inter", sans-serif;
+  color: #f5f5f5!important;
+  display: flex;
+  background-image: url("./components/main/prof/woodcutting/mount.webp ");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 3840px;
+  height: 2160px;
+  user-select: none;
+}
+
+/* navbar */
+#container{
+  display: flex;
+}
+#navbar {
+  display: flex;
+  flex-direction:   column;
+  width: 240px;
+  /*border: thick ridge #ce5c32;*/
+  overflow-wrap: break-word;
+  background-color: #282c34;
+}
+
+
+.nav-main-link {
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  min-height: 2.5rem;
+
+}
+.pointer {
+  cursor: pointer;
+}
+.full-div{
+  width: 100%;
+  height: 100%;
+}
+.nav-main-link:hover {
+  background-color: #0f2d2b;
+}
+
+.nav-icons{
+  width: 24px;
+  height: 24px;
+  margin-right: 8px;
+}
+
+.nav-icons-level {
+  margin-right: 4px;
+  margin-left: auto;
+  font-size: .65rem;
+}
+
+.nav-icons-title {
+  font-size: .875rem;
+  line-height: 1.25rem;
+}
+
+.nav-main-heading{
+  padding: 22px 20px 6px;
+  display: flex;
+  /*border: thick ridge #ce5c32;*/
+
+  color: #6d7a86;
+}
+
+.nav-eye {
+  width: 14px;
+  color: white;
+}
+
+
+/* content */
+
+#prof {
+  display: flex;
+  flex-direction: column;
+}
+
+.progress-bar {
+  flex-wrap: wrap;
+  height: 100px;
+  width: 1600px;
+  background-color: #282c34;
+
+}
+
+
+.exp-bar {
+  background-color: #0f2d2b;
+
+  height: 8px;
+}
+
+.horizontal-pool-nav{
+
+  justify-content: space-between;
+  height: 35%;
+  display: flex;
+  margin: 0 20px;
+}
+
+.horizontal-pool-nav div{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+
+}
+
+.small-text {
+  font-size: 0.66rem;
+}
+
+.rounded {
+  border-radius: 0.25rem;
+  padding: 4px;
+  margin-left: 4px;
+}
+
+.content-skill-lvl {
+  background-color: #30c78d!important;
+}
+
+.content-skill-exp {
+  background-color: #5cace5!important;
+}
+
+.content-skill-tool {
+  background-color: #e5ae67!important;
+}
+
+
+
+
+.mastery{
+
+  height: 65%;
+}
+.flex-item{
+  flex-grow: 1;
+}
+
+.wood-cutting{
+  height: 300px;
+  width: 250px;
+
+  margin-top: 20px;
+
+}
