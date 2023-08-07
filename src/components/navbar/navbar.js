@@ -1,8 +1,8 @@
 import coinsSvg from './navlink/navbarImages/coins.svg';
 import Navlink from "./navlink/navlink";
 import "@fontsource/inter";
-import pveIcon from "./pveInfo";
-import profIcon from "./profInfo"
+import pveIcon from "../../willBeAppi/pveInfo";
+import profIcon from "../../willBeAppi/profInfo"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons'
 import React from "react";

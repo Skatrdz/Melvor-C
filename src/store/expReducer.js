@@ -1,5 +1,5 @@
-import App from "../App";
-import pveInfo from "../components/navbar/pveInfo";
+
+import pveInfo from "../willBeAppi/pveInfo";
 import { createReducer, createAction } from "@reduxjs/toolkit";
 import { createSlice, current  } from '@reduxjs/toolkit'
 

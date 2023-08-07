@@ -93,6 +93,8 @@ html {
   margin-bottom: 20px;
   margin-left: 20px;
   background-color: #282c34;
+
+  text-align: center
 }
 .progress-bar {
   flex-wrap: wrap;
@@ -138,7 +140,11 @@ html {
 .content-skill-lvl {
   background-color: #30c78d!important;
 }
-
+.progress {
+  height: 8%!important;
+  margin: 0 15px;
+  border-radius: 6px;
+}
 .content-skill-exp {
   background-color: #5cace5!important;
 }
