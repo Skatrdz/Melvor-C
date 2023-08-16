@@ -7,6 +7,7 @@ import WoodBlock from "./woodcutting/woodBlock";
 import pveIcon from "../../../willBeAppi/pveInfo";
 import Navlink from "../../navbar/navlink/navlink";
 import WoodBlockReqTemp from "../../../willBeAppi/WoodBlockReq(temp)";
+import WoodProgress from "./woodcutting/woodProgress";
 function Prof() {
     const currentAction = useSelector((state) => state.woodCutting.actionArr)
     const blocks = WoodBlockReqTemp.map(item => {
@@ -28,7 +29,9 @@ function Prof() {
 
         <div id="prof">
             <ProgressBar></ProgressBar>
+            <WoodProgress
 
+            ></WoodProgress>
             <div className="wood-cutting-buttons">
                 {blocks}
 

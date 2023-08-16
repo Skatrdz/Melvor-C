@@ -6,7 +6,7 @@ html {
   background-size: cover;
 
   background-repeat: no-repeat;
-  width: 1300px;
+  width: 100%;
   height: 2000px;
   user-select: none;
 }
@@ -16,12 +16,24 @@ html {
   display: flex;
 }
 #navbar {
+  position: fixed;
   display: flex;
   flex-direction:   column;
-  width: 240px;
+  width: 280px;
   /*border: thick ridge #ce5c32;*/
   overflow-wrap: break-word;
   background-color: #282c34;
+  overflow:scroll;
+  overflow-x:hidden;
+  height: 100vh;
+}
+#navbar::-webkit-scrollbar {
+  width: 3px;
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  scrollbar-width: auto;
+}
+#navbar::-webkit-scrollbar-thumb {
+  background-color: #9d7a73;
 }
 
 
@@ -78,20 +90,29 @@ html {
 #prof {
   display: flex;
   flex-direction: column;
-  width: 1060px;
+  width: 100%;
+  padding: 20px;
+  margin-left: 280px;
 }
 .wood-cutting-buttons {
-  height: 500px;
+  justify-content: space-between;
   display: flex;
   flex-direction: row;
-  padding-top: 20px;
+  padding: 20px;
   flex-wrap: wrap;
+  gap: 10px;
 }
 .prof-block {
-  height: 300px;
-  width: 200px;
-  margin-bottom: 20px;
-  margin-left: 20px;
+  height: 260px;
+  max-width: 23%;
+  flex-basis: 23%;
+  padding: 0 20px;
+
+  box-sizing: border-box;
+  flex-grow: 0;
+  flex-shrink: 0;
+
+
   background-color: #282c34;
 
   text-align: center
@@ -99,9 +120,9 @@ html {
 .progress-bar {
   flex-wrap: wrap;
   height: 100px;
-  width: 1060px;
+  width: 100%;
   background-color: #282c34;
-
+  margin: -20px -20px 30px;
 }
 
 
@@ -162,3 +183,99 @@ html {
   flex-grow: 1;
 }
 
+.wood-progress{
+  padding: 20px;
+  margin: 0 20px;
+  width: auto;
+  background-color: #282c34;
+
+}
+
+.wood-cutting-grants {
+  display: flex;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+  justify-content: center;
+
+}
+.bank-item{
+  background: #2d3542!important;
+  height: 48px;
+  width: 48px;
+
+  margin: 4px;
+}
+.resize-48 {
+  box-sizing: border-box;
+  height: 48px;
+  width: 48px;
+  padding: 0.5rem;
+
+}
+.centered-badge-number {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: -10px;
+}
+.badge-pill {
+  padding-right: 0.6em;
+  padding-left: 0.6em;
+  border-radius: 10rem;
+}
+.bg-primary-color {
+  background-color: #5179d6!important;
+}
+
+
+/* all for progress bar  */
+
+.wood-progress-animation {
+  border-radius: 6px;
+  background: rgba(0, 0, 0, 0.25);
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.25), 0 1px rgba(255, 255, 255, 0.08);
+
+}
+
+.wood-progress-bar-animation {
+
+  height: 24px;
+  border-radius: 6px;
+
+}
+
+.wood-progress-bar-animation .animation {
+
+  animation: progressAnimation 300s infinite linear;
+
+}
+
+.wood-full-bar {
+  transition-property: width, background-color;
+  height: 24px;
+  border-radius: 6px;
+  width: 100%;
+  background-color: #2e7d32;
+}
+.wood-empty-bar {
+  transition-property: width, background-color;
+  height: 24px;
+  border-radius: 6px;
+  width: 0%;
+  background-color: #2e7d32;
+}
+
+
+@keyframes progressAnimation {
+  0%  { width: 0; background-color: #2e7d32;}
+  100% { width: 100%; background-color: #2e7d32; }
+
+
+}
+/*@keyframes progressAnimation {*/
+/*  0%  { width: 100%; background-color: #2e7d32;}*/
+
+/*  100%  { width: 0%; background-color: #2e7d32;}*/
+
+
+/*}*/

@@ -16,6 +16,7 @@ export const expSlice = createSlice({
         addWood: (state, action) => {
             const { id,  actionTime, exp, } = action.payload;
             state.actionArr.push({id, actionTime, exp})
+            state.actionArr.sort((a, b) => b.actionTime - a.actionTime);
 
         },
         deleteWood: (state, action) => {

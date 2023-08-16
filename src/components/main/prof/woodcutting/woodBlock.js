@@ -7,6 +7,7 @@ import {CircularProgress} from "@mui/material";
 import {useDispatch, useSelector} from "react-redux";
 import {addExperience} from "../../../../store/expReducer";
 import {addWood, deleteWood} from "../../../../store/blocksReducers/woodCuttingReducer";
+import WoodProgress from "./woodProgress";
 
 
 function WoodBlock(props) {
@@ -17,23 +18,8 @@ function WoodBlock(props) {
     const dispatch = useDispatch()
     const currentAction = useSelector(
         (state) => state.woodCutting.actionArr)
-    const addExp = () => {
-        dispatch(addExperience({ exp: props.exp, skillId: "1" }));
-    };
 
 
-    useEffect(() => {
-        if (on) {
-            const interval = setInterval(() => {
-                addExp();
-            }, props.cutTime * 1000);
-
-            return () => {
-                clearInterval(interval); // Cleanup the interval on component unmount
-            };
-        }
-    }, [on]);
-    // console.log(props.id)
 
     function toggle() {
         if (on) {
@@ -54,6 +40,7 @@ function WoodBlock(props) {
 
 
     return (
+
         <div className={"prof-block pointer "} onClick={toggle}>
 
             <br/>
@@ -70,7 +57,11 @@ function WoodBlock(props) {
             <br/>
             <img src={props.img} width="65px"></img>
             <br/>
-            <LinearProgress variant="buffer" value={on ? 100 : 0} valueBuffer={100} className="progress" color="success" />
+            <div className="wood-progress-animation">
+                    <div className={on ? "wood-full-bar" : "wood-empty-bar"}> </div>
+            </div>
+
+            {/*<LinearProgress variant="buffer" value={on ? 100 : 0} valueBuffer={100} className="progress" color="success" />*/}
 
             </div>
 

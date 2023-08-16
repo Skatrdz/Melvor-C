@@ -24,6 +24,7 @@ function App() {
     // </div>
       <Provider store={store}>
           <div id="container">
+
               <Navbar></Navbar>
               <Prof/>
           </div>
