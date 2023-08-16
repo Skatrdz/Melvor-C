@@ -1,15 +1,21 @@
-import "./test.css"
-function Test() {
 
-    return (
-        <div className="container">
-            <div className="flex-item item-1">Item1</div>
-            <div className="flex-item item-2">Item2</div>
-            <div className="flex-item item-3">Item3</div>
-            <div className="flex-item item-4">Item4</div>
-            <div className="flex-item item-5">Item5</div>
-        </div>
-    );
-}
+a = [
+    {
+        id: 1,
+        actionTime: 3,
+        exp: 10,
+    },
 
-export default Test;
+    //     id: 2,
+    //     actionTime: 4,
+    //     exp: 15,
+    // },
+]
+
+a[0].id = [a[0].id, 20]
+a[0].actionTime = [a[0].actionTime, 10]
+a[0].exp = [a[0].exp, 10]
+
+
+
+console.log(a)

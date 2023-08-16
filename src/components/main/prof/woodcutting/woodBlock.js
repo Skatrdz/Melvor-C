@@ -22,13 +22,14 @@ function WoodBlock(props) {
 
 
     function toggle() {
+        console.log(currentAction[0].id)
         if (on) {
             console.log("delete")
             dispatch(deleteWood({ id: props.id}))
             console.log(currentAction)
             setOn(prevOn => !prevOn)
         }
-        else if (currentAction.length < 2) {
+        else if (currentAction[0].id.length < 2) {
             console.log("add")
             dispatch(addWood({ id: props.id, actionTime: props.cutTime, exp: props.exp }))
             console.log(currentAction)

@@ -1,6 +1,6 @@
 export default [
     {
-        id: 1,
+        id: [1],
         actionTime: 3,
         exp: 10,
     },
