@@ -4,34 +4,23 @@ import {useDispatch, useSelector} from "react-redux"
 import { addExperience } from "../../../../store/expReducer";
 import progressBar from "../allProf/progressBar";
 import WoodCuttingGrants from "./woodCuttingGrants";
+import xpTable from "../../../../willBeAppi/xpTable";
 function WoodProgress() {
     const dispatch = useDispatch()
 
     const currentAction = useSelector(
         (state) => state.woodCutting.actionArr)
-    const [exp, setExp] = React.useState(currentAction[0].exp)
+
+    const [exp, setExp] = React.useState(currentAction ? 0 : currentAction[0].exp)
     const addExp = () => {
+        dispatch(addExperience({ obj: currentAction }));
 
-        if (currentAction.length === 1){
-            console.log("len1")
-            setExp(currentAction[0].exp)
-        }
-        if (currentAction.length === 2){
-            console.log("len2")
-
-            const newExp = currentAction[0].exp + Math.floor(currentAction[0].actionTime /
-                currentAction[1].actionTime) * currentAction[1].exp;
-            console.log("newExp", newExp)
-            setExp(newExp)
-
-        }
-        console.log("expdis: ", exp)
-        dispatch(addExperience({ exp: exp, skillId: "1", }));
 
     };
     useEffect(() => {
         if (currentAction[0]) {
             const interval = setInterval(() => {
+
                 addExp();
 
             }, currentAction[0].actionTime * 1000);
@@ -61,8 +50,10 @@ function WoodProgress() {
             { currentAction[0]
                 ?
             <WoodCuttingGrants
-                exp = {exp}
-                actionTime={currentAction[0].actionTime}
+                currentAction={currentAction}
+                exp = {currentAction[2] ? currentAction[2].exp: currentAction[0].exp}
+                count = {currentAction[2] ? currentAction[2].count : null}
+
             ></WoodCuttingGrants>
                 :
                 <h1>info will display here</h1>

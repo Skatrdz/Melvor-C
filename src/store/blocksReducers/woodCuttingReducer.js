@@ -15,18 +15,31 @@ export const expSlice = createSlice({
     reducers: {
         addWood: (state, action) => {
             const { id,  actionTime, exp, } = action.payload;
-            state.actionArr = ({
-                id: [state.actionArr[0].id, id],
-                actionTime: [state.actionArr[0].actionTime, actionTime],
-                exp: [state.actionArr[0].exp, exp]
-            })
-            // state.actionArr.push({id, actionTime, exp})
-            console.log(10, state.actionArr[0].id)
-
+            state.actionArr.push({id, actionTime, exp})
+            state.actionArr.sort((a, b) => b.actionTime - a.actionTime);
+            console.log(state.actionArr)
+            if (state.actionArr.length === 2){
+                console.log(20)
+                state.actionArr.push({ exp: state.actionArr[0].exp +
+                    Math.floor(state.actionArr[0].actionTime /
+                        state.actionArr[1].actionTime) * state.actionArr[1].exp,
+                count: Math.floor(state.actionArr[0].actionTime /
+                    state.actionArr[1].actionTime)
+                })
+            }
+           // const bothExp = state.actionArr[0].exp +
+            //     Math.floor(state.actionArr[0].actionTime / state.actionArr[1].actionTime) * state.actionArr[1].exp
+            // state.actionArr.push({bothExp})
         },
         deleteWood: (state, action) => {
             const { id } = action.payload;
-            state.actionArr = state.actionArr.filter(item => item.id !== id);
+            if (state.actionArr.length === 3){
+                state.actionArr.splice(2, 1)
+                state.actionArr = state.actionArr.filter(item => item.id !== id);
+            }
+            else {
+                state.actionArr = state.actionArr.filter(item => item.id !== id);
+            }
         },
     },
 });

@@ -169,5 +169,5 @@ export default [
         lvl: 120,
         axe: "Divine Axe",
         img: "https://cdn.melvor.net/core/v018/assets/media/skills/woodcutting/normal_tree.svg"
-    }
+    },
 ]

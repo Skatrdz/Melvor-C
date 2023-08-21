@@ -22,14 +22,13 @@ function WoodBlock(props) {
 
 
     function toggle() {
-        console.log(currentAction[0].id)
         if (on) {
             console.log("delete")
             dispatch(deleteWood({ id: props.id}))
             console.log(currentAction)
             setOn(prevOn => !prevOn)
         }
-        else if (currentAction[0].id.length < 2) {
+        else if (currentAction.length < 3) {
             console.log("add")
             dispatch(addWood({ id: props.id, actionTime: props.cutTime, exp: props.exp }))
             console.log(currentAction)
@@ -56,10 +55,14 @@ function WoodBlock(props) {
                 <span>{props.cutTime} seconds</span>
             </small>
             <br/>
-            <img src={props.img} width="65px"></img>
+            <img src={props.img} width="64px"></img>
             <br/>
             <div className="wood-progress-animation">
                     <div className={on ? "wood-full-bar" : "wood-empty-bar"}> </div>
+            </div>
+            <br/>
+            <div className="mastery-block">
+                <img src="https://melvoridle.com/assets/media/main/mastery_pool.svg" className="nav-icons"></img>
             </div>
 
             {/*<LinearProgress variant="buffer" value={on ? 100 : 0} valueBuffer={100} className="progress" color="success" />*/}

@@ -63,7 +63,7 @@ html {
 .nav-icons-level {
   margin-right: 4px;
   margin-left: auto;
-  font-size: .65rem;
+
 }
 
 .nav-icons-title {
@@ -139,8 +139,10 @@ html {
   display: flex;
   margin: 0 20px;
 }
-
-.horizontal-pool-nav div{
+.mastery-block{
+  text-align: start;
+}
+.horizontal-pool-nav div {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -193,6 +195,20 @@ html {
 
 .wood-cutting-grants {
   display: flex;
+  gap: 20px;
+  justify-content: center;
+
+}
+.wood1-grants, .wood2-grants {
+  display: flex;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+  justify-content: center;
+
+}
+
+.all-wood-grants{
+  display: flex;
   flex-wrap: wrap;
   box-sizing: border-box;
   justify-content: center;
@@ -222,6 +238,7 @@ html {
   padding-right: 0.6em;
   padding-left: 0.6em;
   border-radius: 10rem;
+  background-color: #808080;
 }
 .bg-primary-color {
   background-color: #5179d6!important;

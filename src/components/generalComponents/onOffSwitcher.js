@@ -14,7 +14,7 @@ function OnOffSwitcher(props) {
         <div>
         <span className="nav-main-heading">{props.contentName} <FontAwesomeIcon icon={iconDef} className="nav-eye" onClick={toggle}/></span>
         {on && props.content}
-        </div>
+    </div>
     );
 }
 
