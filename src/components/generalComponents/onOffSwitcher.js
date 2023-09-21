@@ -8,7 +8,7 @@ function OnOffSwitcher(props) {
     function toggle() {
         setOn(prevOn => !prevOn)
     }
-    const [on, setOn] = React.useState(true)
+    const [on, setOn] = useState(props.on);
     const iconDef  = on === true ? faEye : faEyeSlash;
     return (
         <div>
@@ -17,6 +17,9 @@ function OnOffSwitcher(props) {
     </div>
     );
 }
+OnOffSwitcher.defaultProps = {
+    on: true
+};
 
 
 export default OnOffSwitcher;

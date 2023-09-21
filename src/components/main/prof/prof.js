@@ -10,7 +10,9 @@ import WoodBlockReqTemp from "../../../willBeAppi/WoodBlockReq(temp)";
 import WoodProgress from "./woodcutting/woodProgress";
 function Prof() {
     const currentAction = useSelector((state) => state.woodCutting.actionArr)
-    const blocks = WoodBlockReqTemp.map(item => {
+    const woodArray = useSelector(
+        (state) => state.skills.woodCuttingMastery)
+    const blocks = woodArray.map(item => {
         const isOn = currentAction.some(action => action.id === item.id);
         return (
             <WoodBlock
@@ -19,6 +21,9 @@ function Prof() {
                 exp={item.xp}
                 cutTime={item.cutTime}
                 img={item.img}
+                masteryLvl={item.mastery}
+                masteryExp={item.masteryExp}
+                resource={item.logs}
                 on={isOn}
                 {...item}
 

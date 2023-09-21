@@ -14,12 +14,10 @@ export const expSlice = createSlice({
     initialState,
     reducers: {
         addWood: (state, action) => {
-            const { id,  actionTime, exp, } = action.payload;
-            state.actionArr.push({id, actionTime, exp})
+            const { id,  actionTime, exp, masteryLvl, masteryExp, resource} = action.payload;
+            state.actionArr.push({id, actionTime, exp, masteryLvl, masteryExp, resource })
             state.actionArr.sort((a, b) => b.actionTime - a.actionTime);
-            console.log(state.actionArr)
             if (state.actionArr.length === 2){
-                console.log(20)
                 state.actionArr.push({ exp: state.actionArr[0].exp +
                     Math.floor(state.actionArr[0].actionTime /
                         state.actionArr[1].actionTime) * state.actionArr[1].exp,

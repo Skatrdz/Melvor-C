@@ -1,11 +1,12 @@
 export default [
     {
         id: 1,
-        title: "Рубка леса",
+        title: "Рубка леса(W)",
         lvlMax: 120,
         currentLvl: 2,
         imgsource: "https://cdn.melvor.net/core/v018/assets/media/skills/woodcutting/woodcutting.svg",
         exp: 10,
+        masteryExp: 20,
     },
     {
         id: 2,

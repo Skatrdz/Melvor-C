@@ -3,7 +3,7 @@ import './App.css';
 import test from "./mytest/test.css";
 import Navbar from "./components/navbar/navbar";
 import Prof from "./components/main/prof/prof";
-import LinearCheck from "./components/main/prof/LinearCheck";
+
 // import Test from "./mytest/test";
 import {createStore} from "redux"
 import {Provider} from "react-redux";
@@ -24,7 +24,7 @@ function App() {
     // </div>
       <Provider store={store}>
           <div id="container">
-
+ 
               <Navbar></Navbar>
               <Prof/>
           </div>

@@ -51,8 +51,9 @@ function Navbar(props){
 
             </div>
             <OnOffSwitcher
-            content={pve}
-            contentName={"Боевые"}
+                on = {false}
+                content={pve}
+                contentName={"Боевые"}
             >
 
             </OnOffSwitcher>
