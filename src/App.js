@@ -8,6 +8,7 @@ import Prof from "./components/main/prof/prof";
 import {createStore} from "redux"
 import {Provider} from "react-redux";
 import store from "./store/store";
+import Test from "./mytest/test";
 
 
 
@@ -24,7 +25,7 @@ function App() {
     // </div>
       <Provider store={store}>
           <div id="container">
- 
+
               <Navbar></Navbar>
               <Prof/>
           </div>
